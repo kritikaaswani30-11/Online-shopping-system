@@ -1,9 +1,3 @@
-FROM python:3.10-slim
+FROM nginx:latest
 
-WORKDIR /app
-
-COPY . .
-
-RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
-
-CMD ["python", "main.py"]
+COPY . /usr/share/nginx/html/
